@@ -1,4 +1,4 @@
-package com.wanted.wantedbackend.domain;
+package com.wanted.wantedbackend.domain.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,14 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Recruitment {
+public class Company {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private Long companyId;
-  private String position;
-  private Long reward;
-  private String description;
-  private String techStack;
+  private String name;
+  private String nation;
+  private String location;
 }
