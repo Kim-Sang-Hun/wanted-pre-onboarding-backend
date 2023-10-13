@@ -25,6 +25,6 @@ public interface RecruitmentRepository extends JpaRepository<Recruitment, Long> 
   @Query("select e from Recruitment e"
       + " where e.companyId = :companyId and e.id <> :id and e.expireDate >= current_timestamp"
       + " order by e.expireDate")
-  List<Recruitment> findOtherNotExpiredRecruitmentsByCompanyId(Long companyId, Long id);
+  List<Recruitment> findOtherRecruitmentsByCompanyId(Long companyId, Long id);
 
 }
