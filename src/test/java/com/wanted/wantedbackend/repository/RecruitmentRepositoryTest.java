@@ -8,12 +8,9 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = Replace.AUTO_CONFIGURED)
 public class RecruitmentRepositoryTest {
 
   @Autowired
@@ -74,6 +71,35 @@ public class RecruitmentRepositoryTest {
     //then
     Assertions.assertThat(recruitments.get(0)).isEqualTo(notExpiredRecruitment);
     Assertions.assertThat(recruitments.size()).isEqualTo(1);
+  }
+
+  @Test
+  @DisplayName("가져오면서 만료일자가 가까운 순서대로 가져오는지 확인")
+  void findNotExpiredRecruitmentsOrdered() {
+    //given
+    Recruitment recruitment1 = Recruitment.builder()
+        .companyId(1L)
+        .position("백엔드")
+        .reward(100L)
+        .description("자바 개발자 구함")
+        .techStack("자바")
+        .expireDate(LocalDateTime.of(9000, 1, 1, 1, 1))
+        .build();
+    Recruitment recruitment2 = Recruitment.builder()
+        .companyId(1L)
+        .position("프론트엔드")
+        .reward(10L)
+        .description("리액트 개발자 구함")
+        .techStack("리액트")
+        .expireDate(LocalDateTime.of(5000, 1, 1, 1, 1))
+        .build();
+    recruitmentRepository.save(recruitment1);
+    recruitmentRepository.save(recruitment2);
+    //when
+    List<Recruitment> recruitments = recruitmentRepository.findNotExpiredRecruitments();
+    //then
+    Assertions.assertThat(recruitments.get(0)).isEqualTo(recruitment2);
+    Assertions.assertThat(recruitments.get(1)).isEqualTo(recruitment1);
   }
 
   @Test

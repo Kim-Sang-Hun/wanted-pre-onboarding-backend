@@ -3,8 +3,10 @@ package com.wanted.wantedbackend.recruitment.model.dto;
 import com.wanted.wantedbackend.recruitment.model.Recruitment;
 import java.time.LocalDateTime;
 import lombok.Builder;
+import lombok.Getter;
 
 @Builder
+@Getter
 public class RecruitmentReadDto {
   private Long recruitmentId;
   private String companyName;

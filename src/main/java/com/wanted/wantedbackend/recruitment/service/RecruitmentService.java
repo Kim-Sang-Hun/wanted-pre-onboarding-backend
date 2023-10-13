@@ -22,22 +22,22 @@ public class RecruitmentService {
   private final RecruitmentRepository recruitmentRepository;
   private final CompanyRepository companyRepository;
 
-  public void createRecruitment(Long companyId, RecruitmentSubmitDto request) {
+  public Recruitment createRecruitment(Long companyId, RecruitmentSubmitDto request) {
 
     Optional<Recruitment> recruitment = recruitmentRepository.findSameRecruitments(
         companyId, request.getPosition(), request.getReward(), request.getDescription(),
         request.getTechStack());
     if (recruitment.isPresent()) {
-      throw new IllegalArgumentException("똑같은 채용공고가 이미 있습니다.");
+      throw new IllegalArgumentException("동일한 채용공고가 존재합니다.");
     }
 
     Company company = companyRepository.findById(companyId)
         .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회사입니다."));
 
-    recruitmentRepository.save(Recruitment.from(company, request));
+    return recruitmentRepository.save(Recruitment.from(company, request));
   }
 
-  public void updateRecruitment(Long companyId, Long recruitmentId, RecruitmentSubmitDto request) {
+  public Recruitment updateRecruitment(Long companyId, Long recruitmentId, RecruitmentSubmitDto request) {
     Recruitment recruitment = recruitmentRepository.findById(recruitmentId)
             .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 채용공고입니다."));
     if (!companyId.equals(recruitment.getCompanyId())) {
@@ -45,9 +45,10 @@ public class RecruitmentService {
     }
 
     recruitment.updateRecruitment(request);
+    return recruitment;
   }
 
-  public void deleteRecruitment(Long companyId, Long recruitmentId) {
+  public Long deleteRecruitment(Long companyId, Long recruitmentId) {
     Recruitment recruitment = recruitmentRepository.findById(recruitmentId)
         .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 채용공고입니다."));
     if (!companyId.equals(recruitment.getCompanyId())) {
@@ -55,6 +56,7 @@ public class RecruitmentService {
     }
 
     recruitmentRepository.delete(recruitment);
+    return recruitmentId;
   }
 
   @Transactional(readOnly = true)
@@ -76,9 +78,9 @@ public class RecruitmentService {
 
   private List<Long> getOtherRecruitmentIds(Long companyId, Long currentRecruitmentId) {
     List<Recruitment> otherRecruitments = recruitmentRepository
-        .findOtherNotExpiredRecruitmentsByCompanyId(companyId, currentRecruitmentId);
+        .findOtherRecruitmentsByCompanyId(companyId, currentRecruitmentId);
 
-    return otherRecruitments.stream().map(Recruitment::getCompanyId).collect(
+    return otherRecruitments.stream().map(Recruitment::getId).collect(
         Collectors.toList());
   }
 }
