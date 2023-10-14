@@ -6,11 +6,12 @@
 
 <h2>요구 사항</h2>
 <h3>1. 회사 대상 서비스</h3><br>
+
 <details>
    <summary>
       (1) 채용공고 생성
    </summary>
-   <img src="https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/d7a33ebb-ff50-495e-80c9-1abc37c75854">
+   <img src="https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/7136fa28-1e9f-4ead-ba61-9f0ae42e21b1">
 
 </details>
 <details>
@@ -34,7 +35,6 @@
       (1) 채용공고 조회
    </summary>
    <img src="https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/089741d9-6e7a-46fc-a992-d75a343f228a">
-
 
 </details>
 <details>
@@ -60,7 +60,8 @@
    <summary>
       (5) 지원한 채용공고 확인
    </summary>
-   <img src="https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/30dc236a-5f40-41e3-a210-9826245eda65">
+   <img src="https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/205ee83e-daf7-4f4f-a962-25c18ce1e90c">
+
 </details>
 
 
