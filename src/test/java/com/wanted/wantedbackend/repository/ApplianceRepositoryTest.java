@@ -88,9 +88,9 @@ public class ApplianceRepositoryTest {
     List<ApplianceReadDto> list = applianceRepository.findRecruitmentsByUserId(1L);
     //then
     //lastModifiedAt 역순으로 정렬해서 가져오므로, 가장 마지막에 등록한 appliance3이 제일 처음 와야 함
-    Assertions.assertThat(list.get(0).getApplianceId()).isEqualTo(appliance3.getId());
-    Assertions.assertThat(list.get(1).getApplianceId()).isEqualTo(appliance2.getId());
-    Assertions.assertThat(list.get(2).getApplianceId()).isEqualTo(appliance1.getId());
+    Assertions.assertThat(list.get(0).getRecruitmentId()).isEqualTo(appliance3.getRecruitmentId());
+    Assertions.assertThat(list.get(1).getRecruitmentId()).isEqualTo(appliance2.getRecruitmentId());
+    Assertions.assertThat(list.get(2).getRecruitmentId()).isEqualTo(appliance1.getRecruitmentId());
   }
 
 }
