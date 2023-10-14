@@ -59,8 +59,9 @@
    <summary>
       (5) 지원한 채용공고 확인
    </summary>
+   ![image](https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/30dc236a-5f40-41e3-a210-9826245eda65)
 </details>
-![image](https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/30dc236a-5f40-41e3-a210-9826245eda65)
+
 
 <h2>사용 기술 스택</h2>
     <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white">
