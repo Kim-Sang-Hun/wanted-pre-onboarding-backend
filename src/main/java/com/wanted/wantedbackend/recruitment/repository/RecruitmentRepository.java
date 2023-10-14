@@ -1,6 +1,7 @@
 package com.wanted.wantedbackend.recruitment.repository;
 
 import com.wanted.wantedbackend.recruitment.model.Recruitment;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,9 +14,10 @@ public interface RecruitmentRepository extends JpaRepository<Recruitment, Long> 
   @Query("select e from Recruitment e"
       + " where e.companyId = :companyId and e.position = :position"
       + " and e.reward = :reward and e.description = :description"
-      + " and e.techStack = :techStack")
+      + " and e.techStack = :techStack and e.expireDate = :expireDate")
   Optional<Recruitment> findSameRecruitment(Long companyId,
-      String position, Long reward, String description, String techStack);
+      String position, Long reward, String description, String techStack,
+      LocalDateTime expireDate);
 
   @Query("select e from Recruitment e"
       + " where e.expireDate >= current_timestamp"

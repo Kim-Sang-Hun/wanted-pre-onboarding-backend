@@ -26,6 +26,7 @@ public class RecruitmentRepositoryTest {
         .reward(100L)
         .description("자바 개발자 구함")
         .techStack("자바")
+        .expireDate(LocalDateTime.of(3000, 1, 1, 1, 1))
         .build());
     Recruitment differentRecruitment = recruitmentRepository.save(Recruitment.builder()
         .companyId(1L)
@@ -36,7 +37,8 @@ public class RecruitmentRepositoryTest {
         .build());
     //when
     Recruitment foundRecruitment = recruitmentRepository.findSameRecruitment(1L
-            , "백엔드", 100L, "자바 개발자 구함", "자바")
+            , "백엔드", 100L, "자바 개발자 구함", "자바"
+            , LocalDateTime.of(3000, 1, 1, 1, 1))
         .orElse(null);
     //then
     Assertions.assertThat(foundRecruitment).isEqualTo(sameRecruitment);

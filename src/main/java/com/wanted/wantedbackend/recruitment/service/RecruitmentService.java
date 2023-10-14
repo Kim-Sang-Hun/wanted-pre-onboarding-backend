@@ -26,7 +26,7 @@ public class RecruitmentService {
 
     Optional<Recruitment> recruitment = recruitmentRepository.findSameRecruitment(
         companyId, request.getPosition(), request.getReward(), request.getDescription(),
-        request.getTechStack());
+        request.getTechStack(), request.getExpireDate());
     if (recruitment.isPresent()) {
       throw new IllegalArgumentException("동일한 채용공고가 존재합니다.");
     }
@@ -37,9 +37,10 @@ public class RecruitmentService {
     return recruitmentRepository.save(Recruitment.from(company, request));
   }
 
-  public Recruitment updateRecruitment(Long companyId, Long recruitmentId, RecruitmentSubmitDto request) {
+  public Recruitment updateRecruitment(Long companyId, Long recruitmentId,
+      RecruitmentSubmitDto request) {
     Recruitment recruitment = recruitmentRepository.findById(recruitmentId)
-            .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 채용공고입니다."));
+        .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 채용공고입니다."));
     if (!companyId.equals(recruitment.getCompanyId())) {
       throw new IllegalArgumentException("다른 회사의 채용공고입니다.");
     }
@@ -71,7 +72,8 @@ public class RecruitmentService {
     Recruitment recruitment = recruitmentRepository.findById(recruitmentId)
         .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 채용공고입니다."));
 
-    List<Long> otherRecruitmentIds = this.getOtherRecruitmentIds(recruitment.getCompanyId(), recruitmentId);
+    List<Long> otherRecruitmentIds = this.getOtherRecruitmentIds(recruitment.getCompanyId(),
+        recruitmentId);
 
     return RecruitmentDetailReadDto.from(recruitment, otherRecruitmentIds);
   }

@@ -15,7 +15,7 @@ public interface ApplianceRepository extends JpaRepository<Appliance, Long> {
       + " where e.userId = :userId and e.recruitmentId = :recruitmentId")
   Optional<Appliance> findByUserIdAndRecruitmentId(Long userId, Long recruitmentId);
   @Query("select new com.wanted.wantedbackend.appliance.model.dto.ApplianceReadDto("
-      + " a.id, r.companyName, r.nation, r.location,"
+      + " r.companyId, r.companyName, r.nation, r.location,"
       + " r.position, r.reward, r.techStack, a.lastModifiedAt, r.expireDate)"
       + " from Appliance a "
       + " left join Recruitment r on a.recruitmentId = r.id"

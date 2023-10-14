@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ApplianceReadDto {
-  private Long applianceId;
+  private Long companyId;
   private String companyName;
   private String nation;
   private String location;
