@@ -6,15 +6,52 @@
 
 <h2>요구 사항</h2>
 1. 회사 대상 서비스<br><br>
-   (1) 채용공고 생성, 수정, 삭제<br><br>
+<details>
+   <summary>
+      (1) 채용공고 생성
+   </summary>
+</details>
+<details>
+   <summary>
+      (2) 채용공고 수정
+   </summary>
+</details>
+<details>
+   <summary>
+      (3) 채용공고 삭제
+   </summary>
+</details>
+
 2. 사용자 대상 서비스<br><br>
-   (1) 채용공고 조회, 검색<br>
-   (2) 채용 상세 페이지 조회<br>
-   (3) 채용공고에 지원<br>
+<details>
+   <summary>
+      (1) 채용공고 조회
+   </summary>
+</details>
+<details>
+   <summary>
+      (2) 채용 상세 페이지 조회
+   </summary>
+</details>
+<details>
+   <summary>
+      (3) 채용공고 검색
+   </summary>
+</details>
+<details>
+   <summary>
+      (4) 채용공고 지원
+   </summary>
+</details>
+<details>
+   <summary>
+      (5) 지원한 채용공고 확인
+   </summary>
+</details>
 
 <h2>사용 기술 스택</h2>
-    ![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-    ![spring](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
-    ![mariadb](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
-    ![hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
+    <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white">
+    <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
+    <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white">
+    <img src="https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white">
 
