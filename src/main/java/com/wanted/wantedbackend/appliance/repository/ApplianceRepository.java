@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public interface ApplianceRepository extends JpaRepository<Appliance, Long> {
 
   @Query("select e from Appliance e"
-      + " where e.id = :userId and e.recruitmentId = :recruitmentId")
+      + " where e.userId = :userId and e.recruitmentId = :recruitmentId")
   Optional<Appliance> findByUserIdAndRecruitmentId(Long userId, Long recruitmentId);
   @Query("select new com.wanted.wantedbackend.appliance.model.dto.ApplianceReadDto("
       + " a.id, r.companyName, r.nation, r.location,"

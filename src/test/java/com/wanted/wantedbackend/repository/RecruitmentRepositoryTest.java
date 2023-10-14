@@ -35,7 +35,7 @@ public class RecruitmentRepositoryTest {
         .techStack("리액트")
         .build());
     //when
-    Recruitment foundRecruitment = recruitmentRepository.findSameRecruitments(1L
+    Recruitment foundRecruitment = recruitmentRepository.findSameRecruitment(1L
             , "백엔드", 100L, "자바 개발자 구함", "자바")
         .orElse(null);
     //then

@@ -23,7 +23,7 @@ public class ApplianceController {
       @RequestParam(value = "recruitmentId") Long recruitmentId
   ) {
     Appliance appliance = applianceService.createAppliance(userId, recruitmentId);
-    return ResponseEntity.ok(appliance.getId());
+    return ResponseEntity.ok("생성 성공, id: " + appliance.getId());
   }
 
   @GetMapping("/appliance")

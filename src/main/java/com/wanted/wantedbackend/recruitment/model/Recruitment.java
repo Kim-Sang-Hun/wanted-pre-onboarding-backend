@@ -35,6 +35,7 @@ public class Recruitment extends BaseEntity {
 
   public static Recruitment from(Company company, RecruitmentSubmitDto request) {
     return Recruitment.builder()
+        .companyId(company.getId())
         .companyName(company.getName())
         .nation(company.getNation())
         .location(company.getLocation())

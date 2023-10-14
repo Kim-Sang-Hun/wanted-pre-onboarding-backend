@@ -24,7 +24,7 @@ public class RecruitmentService {
 
   public Recruitment createRecruitment(Long companyId, RecruitmentSubmitDto request) {
 
-    Optional<Recruitment> recruitment = recruitmentRepository.findSameRecruitments(
+    Optional<Recruitment> recruitment = recruitmentRepository.findSameRecruitment(
         companyId, request.getPosition(), request.getReward(), request.getDescription(),
         request.getTechStack());
     if (recruitment.isPresent()) {

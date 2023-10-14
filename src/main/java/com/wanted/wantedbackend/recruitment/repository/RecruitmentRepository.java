@@ -14,7 +14,7 @@ public interface RecruitmentRepository extends JpaRepository<Recruitment, Long> 
       + " where e.companyId = :companyId and e.position = :position"
       + " and e.reward = :reward and e.description = :description"
       + " and e.techStack = :techStack")
-  Optional<Recruitment> findSameRecruitments(Long companyId,
+  Optional<Recruitment> findSameRecruitment(Long companyId,
       String position, Long reward, String description, String techStack);
 
   @Query("select e from Recruitment e"
