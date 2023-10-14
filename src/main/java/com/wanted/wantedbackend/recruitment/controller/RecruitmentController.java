@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class RecruitmentController {
+
   private final RecruitmentService recruitmentService;
 
   @PostMapping("/recruitment/create")
@@ -48,12 +49,12 @@ public class RecruitmentController {
     return ResponseEntity.ok("삭제 성공" + id);
   }
 
-  @GetMapping("/recruitment/get")
+  @GetMapping("/recruitment")
   public ResponseEntity<?> getAllRecruitments() {
     return ResponseEntity.ok(recruitmentService.getAllRecruitments());
   }
 
-  @GetMapping("/recruitment/get/{recruitmentId}")
+  @GetMapping("/recruitment/{recruitmentId}")
   public ResponseEntity<?> getRecruitmentDetail(
       @PathVariable Long recruitmentId
   ) {
