@@ -49,6 +49,7 @@
    <img src="https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/41066ded-b413-495b-9ae5-14cda87d6231">
    @Query를 통해 그 회사의 다른 채용공고를 만료일자가 가장 가까운 채용공고 순서대로 가져옵니다.
    이 때 (1)의 채용공고 정보에 채용설명과 다른 채용공고 List를 추가하여 가져옵니다.
+</details>
 
 <details>
    <summary>
