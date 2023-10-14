@@ -21,7 +21,7 @@
       (3) 채용공고 삭제
    </summary>
 </details>
-
+<br>
 2. 사용자 대상 서비스<br><br>
 <details>
    <summary>
