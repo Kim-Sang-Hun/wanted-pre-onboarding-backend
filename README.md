@@ -33,14 +33,15 @@
    <summary>
       (1) 채용공고 조회
    </summary>
-   <img src="<https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/34ed0a56-ebe6-49e8-bff7-7d21e5115364">
+   <img src="https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/089741d9-6e7a-46fc-a992-d75a343f228a">
+
 
 </details>
 <details>
    <summary>
       (2) 채용 상세 페이지 조회
    </summary>
-   <img src="https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/394408c2-132a-4148-8e3e-6601099a043d">
+   <img src="https://github.com/Kim-Sang-Hun/wanted-pre-onboarding-backend/assets/119822465/41066ded-b413-495b-9ae5-14cda87d6231">
 
 </details>
 <details>
